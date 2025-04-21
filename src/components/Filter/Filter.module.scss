@@ -1,0 +1,135 @@
+.filter-cursor {
+	cursor: pointer;
+	background-color: #f7941d !important;
+	color: white !important;
+	border-radius: 8px;
+	padding: 8px 12px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-align: left;
+	&:hover {
+		background-color: #e6841a !important;
+	}
+}
+
+.filter-cursorActive {
+	background-color: #d32f2f !important;
+	color: white !important;
+	border-radius: 8px;
+}
+
+.menu-open {
+	background: #e6e6e6 !important;
+	color: #f18c11 !important;
+	border-left: 4px solid #f18c11;
+}
+
+.active-category {
+	color: #f18c11 !important;
+}
+
+.filter-btn {
+	background-color: #f7941d;
+	border: none;
+	color: white;
+	padding: 10px 14px;
+	border-radius: 6px;
+	&:hover {
+		background-color: #e6841a;
+	}
+}
+
+.filter-categories {
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	padding: 15px;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+
+		> li {
+			div {
+				border-bottom: 1px solid #ddd;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				justify-content: flex-start;
+				padding: 12px 15px;
+				background: #f8f8f8;
+				border-radius: 6px;
+				text-align: left;
+
+				&:hover {
+					background: #e6e6e6;
+					border-left: 6px solid #f7941d;
+					cursor: pointer;
+				}
+
+				img {
+					width: 24px;
+					height: 24px;
+					flex-shrink: 0;
+				}
+
+				span, 
+				p, 
+				.category-label {  // optional class for text span
+					flex: 1;
+					white-space: normal;
+					word-break: break-word;
+				}
+
+				i {
+					margin-left: auto; // float icon right
+				}
+			}
+
+			&.sub-menu li {
+				> div {
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 10px;
+					padding-left: 30px;
+
+					&:hover {
+						cursor: pointer;
+				}
+			}
+
+			ul {
+				background-color: #f4f4f4;
+				padding: 8px 0;
+				border-radius: 5px;
+				cursor: pointer;
+
+				li {
+					div {
+						padding: 8px 20px;
+						display: flex;
+						align-items: center;
+						gap: 10px;
+						text-align: left;
+
+						&:hover {
+							background: #e6e6e6;
+							border-left: 4px solid #f7941d;
+							cursor: pointer;
+						}
+						img {
+							width: 20px;
+							height: 20px;
+							flex-shrink: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}

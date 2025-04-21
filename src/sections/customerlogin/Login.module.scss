@@ -1,0 +1,258 @@
+.login-header-title{
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+}
+.signin-info{
+display: block;
+padding: 0;
+margin-bottom: 20px;
+font-size: 16px;
+line-height: inherit;
+border: 0;
+border-top: 1px solid #e5e5e5;
+}
+
+.login-form-text{
+font-weight: 700;
+font-size: 13px;
+color: #000;
+}
+
+.signin-btn{
+background-color: #f7941d;
+border: 1px solid #f8a543;
+color: #fff;
+font-weight: 700;
+padding: 4px 15px;
+font-size: 15px;
+border-radius: 4px;
+}
+
+.forgot-pw{
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+}
+
+.forgot-pw:hover{
+  color:#656565;
+}
+
+.star{
+color: #e02b27;
+padding: 2px;
+}
+
+.rows{
+  display: flex;
+  flex-direction: row;
+  background-color: #dd4b39;
+  width: 190px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px gray;
+  .gicondiv{
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    margin-right: 4px;
+    padding: 2px;
+    .gicon{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .gtext{
+    color: white;
+    font-size: medium;
+    font-weight:600;
+    margin-top: 3px;
+  }
+
+}
+.rows:hover{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  background-color: #e02b27;
+  width: 190px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgb(65, 65, 65);
+  .gicondiv{
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    margin-right: 4px;
+    padding: 2px;
+    .gicon{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .gtext{
+    color: white;
+    font-size: medium;
+    font-weight:600;
+    margin-top: 3px;
+  }
+
+}
+
+
+
+.fbrows{
+  display: flex;
+  flex-direction: row;
+  background-color: #3b5998;
+  width: 190px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px gray;
+  .fbicondiv{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #3b5998;
+    margin-right: 5px;
+    .fbicon{
+      width: 29px;
+      height: 29px;
+      color: #3b5998;
+    }
+  }
+  .fbtext{
+    color: white;
+    font-size: 14px ;
+    font-weight:700;
+    margin-top: 5px;
+  }
+
+}
+.fbrows:hover{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  background-color: #2f4574;
+  width: 190px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgb(49, 49, 49);
+  .fbicondiv{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #2f4574;
+    margin-right: 5px;
+    .fbicon{
+      width: 29px;
+      height: 29px;
+      color: #2f4574;
+    }
+  }
+  .fbtext{
+    color: white;
+    font-size: 14px ;
+    font-weight:700;
+    margin-top: 5px;
+  }
+}
+
+.loginexistingdiv{
+  box-shadow: 0 2px 8px 4px rgba(0,0,0,0.2);
+}
+.cn{
+  margin-top: 20px;
+}
+.slsec{
+  margin-top: 20px;
+}
+.exsec{
+  margin-top: 20px;
+  width: 50%;
+}
+.cpt{
+  width: 100px;
+}
+
+
+
+
+
+
+.tab-container .nav {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow1 {
+  border: 1px solid #e4e7e9;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #e4e7e9;
+  cursor: pointer;
+}
+
+
+
+.dont {
+  font-size: 14px;
+}
+.google {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.background-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9); // Semi-transparent black overlay
+  z-index: 1; // Place overlay above background image
+}
+
+.imagelogo {
+  position: relative; // Ensure the logo is above the overlay
+  z-index: 2;
+  cursor: pointer;
+}
+
+.imagelogo {
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .background-image {
+    background-image: none;
+    height: auto;
+  }
+  .login-container {
+    height: 100vh;
+  }
+}
+
+.MuiFormHelperText-root {
+  margin-left: 0 !important;
+  color: red !important;
+}

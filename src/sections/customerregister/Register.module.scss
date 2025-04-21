@@ -1,0 +1,263 @@
+  /* Container with fade-in animation */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    // background-color: #f4f4f4;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  // .card {
+  //   background: white;
+  //   max-width: 500px;
+  //   width: 100%;
+  //   padding: 30px;
+  //   border-radius: 12px;
+  //   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  //   text-align: center;
+  //   animation: fadeIn 1s ease-in-out;
+  // }
+  
+  /* Title - Main Heading */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #101010;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Subtitle - Smaller Text Below Title */
+  .subtitle {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .subtitle h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #8e8e8e;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle span {
+    color: #ff8800; /* Highlighted 'IT'S FREE' text */
+    font-weight: bold;
+  }
+  
+  .subtitle p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .card {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .subtitle h4 {
+      font-size: 16px;
+    }
+  
+    .subtitle p {
+      font-size: 13px;
+    }
+  }
+
+/* Card Styling with Animation */
+.formWrapper {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  // background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-in-out forwards;
+  margin-bottom: 100px;
+}
+
+/* Column Layout */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+/* Section Title Animation */
+.sectionTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #0a0909;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Form Group */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Label Styling */
+.formGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color:  #ff8800;
+}
+
+/* Input Styling with Focus Animation */
+.formGroup input {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus {
+  border-color:   #f9b803;
+  outline: none;
+  transform: scale(1.02);
+}
+
+.invalid {
+  border-color: red !important;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Button Inside Card */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animated Button */
+.submitBtn {
+  background-color: #e07b00;
+  color: white;
+  border-radius: 20px;
+  padding: 8px;
+  width:150px;
+  border: none;
+  cursor: pointer ;
+  margin-right: 50px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  gap: 6px;
+}
+// .reg-btn-disable:hover {
+//   background: #e07b00;
+//   transform: scale(1.05);
+
+//   }
+//   .reg-btn-disable:hover {
+//     background: #e07b00;
+//     transform: scale(1.05);
+//   }
+
+
+/* Hover and Click Effects */
+.submitBtn:hover {
+  background: #e07b00;
+    transform: scale(1.05);
+}
+
+// .submitBtn:active {
+//   transform: scale(0.95);
+// }
+
+// /* Button Ripple Animation */
+// .submitBtn::after {
+//   content: "";
+//   position: absolute;
+//   width: 300%;
+//   height: 300%;
+//   top: 50%;
+//   left: 50%;
+//   background: rgba(255, 255, 255, 0.3);
+//   transform: translate(-50%, -50%) scale(0);
+//   border-radius: 50%;
+//   transition: transform 0.5s ease;
+// }
+
+// .submitBtn:active::after {
+//   transform: translate(-50%, -50%) scale(1);
+//   transition: 0s;
+// }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .formWrapper {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .buttonContainer {
+    margin-top: 15px;
+  }
+}

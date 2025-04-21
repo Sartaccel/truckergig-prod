@@ -1,0 +1,102 @@
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background :white; /* Sets a consistent background color */
+    border-radius: 8px;
+    // background-image: url(../../images/contact_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 40px;
+    box-shadow: 0 4px 20px  rgb(159, 218, 243)
+  }
+  
+  .contactLeft,
+  .contactRight {
+    width: 48%; /* Sets both columns to 48% width for equal sizing */
+    padding: 20px;
+    background: inherit; /* Inherits the background color from the parent */
+    border-radius: 8px;
+  }
+  
+  .contactLeft h2,
+  .contactRight h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .contactLeft p,
+  .contactRight p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .contactLeft i,
+  .contactRight i {
+    margin-right: 10px;
+    color: #ff650f;
+  }
+  
+  .mapFrame {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .inputField,
+  .textareaField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .textareaField {
+    height: 120px;
+    resize: none;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .submitBtn {
+    background-color: #e07b00;
+    color: white;
+    border-radius: 20px;
+    padding: 8px;
+    width:150px;
+    border: none;
+    margin-top: 3px;
+    margin-left: 100px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .submitBtn:hover {
+    background: #e07b00;
+    transform: scale(1.05);
+  }
+  
+  .recaptchaContainer {
+    margin: 20px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .contactContainer {
+      flex-direction: column;
+    }
+    .contactLeft,
+    .contactRight {
+      width: 100%;
+    }
+    .submitBtn {
+      width: 50%;
+    }
+  }
+  
