@@ -67,33 +67,31 @@ const Candidateregister: React.FC = () => {
 	const { register, handleSubmit, reset, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
 	const onSubmitHandler = (data) => {
 		data.profileStatus = '1';
-		const code = Country
-		data.phoneNumber = code + data.phoneNumber
-		data.licenseType = driverlicenseType
-		var params = (data);
-		console.log(params)
+		const code = Country;
+		data.phoneNumber = code + data.phoneNumber;
+		data.licenseType = driverlicenseType;
+	
+		const params = data;
+		console.log(params);
+	
 		axios.post(`${urls.baseUrl}candidates/add`, params)
-
 			.then(function (response) {
 				if (response.status === 200) {
-					toast.success('Driver Register Sucessfully', {
-						theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
-						closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
+					toast.success('Driver Registered Successfully', {
+						theme: "dark", position: "top-right", autoClose: 5000
 					});
-					setTimeout(() => { window.location.reload(); }, 3000);
-
-				}
-				else {
-					toast.error('Something went wrong!', {
-						theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
-						closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
+					setTimeout(() => { window.location.reload(); }, 1500);
+				} else {
+					const message = response.data?.message || 'Something went wrong!';
+					toast.error(message, {
+						theme: "dark", position: "top-right", autoClose: 5000
 					});
 				}
 			})
 			.catch(function (error) {
-				toast.error('Error!', {
-					theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
-					closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
+				const message = error.response?.data?.headers?.message || 'Error!';
+				toast.error(message, {
+					theme: "dark", position: "top-right", autoClose: 5000
 				});
 			});
 	}
@@ -196,7 +194,7 @@ const Candidateregister: React.FC = () => {
 			|| verify.substring(0, 1) == "-"
 			|| verify.indexOf('.') !== -1
 		) {
-			toast.error('Invalid otp Number', {
+			toast.error('Please enter the OTP', {
 				theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
 				closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
 			});
@@ -208,14 +206,14 @@ const Candidateregister: React.FC = () => {
 			.then(function (response) {
 				console.log(response.data.headers.status);
 				if (response.data.headers.status == "success") {
-					toast.success('Otp Verified Successfully', {
+					toast.success('OTP Verified Successfully', {
 						theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
 						closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
 					});
 					setdisableRegister(false);
 				}
 				else {
-					toast.error('otp verification failed', {
+					toast.error('Incorrect OTP', {
 						theme: "dark", position: "top-right", autoClose: 5000, hideProgressBar: false,
 						closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined,
 					});
@@ -493,16 +491,34 @@ const Candidateregister: React.FC = () => {
 					<Modal.Body>
 						<form onSubmit={(e) => handleOtpSubmit(e)}>
 							<label>OTP</label><br />
-							<input name="otp" type="text" className="form-control" placeholder="Enter your OTP" onChange={(e) => setverify(e.target.value)}
-							 onBlur={(e) => {
-								e.target.style.borderColor = ""; 
-								e.target.style.boxShadow = "";
-							  }}
-							  onFocus={(e) => {
-								e.target.style.borderColor = "#ff8c00"; 
-								e.target.style.boxShadow = "0 0 5px rgba(255, 140, 0, 0.5)";
-							   }}
-							/>
+							<input
+  name="otp"
+  type="text"
+  maxLength={6}
+  inputMode="numeric"
+  pattern="[0-9]*"
+  className="form-control"
+  placeholder="Enter your OTP"
+  onChange={(e) => setverify(e.target.value.replace(/\D/g, ""))}
+  onKeyDown={(e) => {
+    // Allow only numbers and control keys
+    if (
+      !/[0-9]/.test(e.key) &&
+      !["Backspace", "ArrowLeft", "ArrowRight", "Delete", "Tab"].includes(e.key)
+    ) {
+      e.preventDefault();
+    }
+  }}
+  onBlur={(e) => {
+    e.target.style.borderColor = "";
+    e.target.style.boxShadow = "";
+  }}
+  onFocus={(e) => {
+    e.target.style.borderColor = "#ff8c00";
+    e.target.style.boxShadow = "0 0 5px rgba(255, 140, 0, 0.5)";
+  }}
+/>
+
 							<div className="text-center">
 								<button type="submit" className="reg-btn">Verify</button>
 							</div>
